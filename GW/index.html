@@ -1,0 +1,214 @@
+<!Doctype html>
+<head>
+  <meta charset="UTF-8" name="viewport">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    GAME
+  </title>
+  <link rel="stylesheet" href="layout.css">
+
+  <script>
+    function Time(){
+      var currentdate = new Date(); 
+      var datetime = "Now is <br>" + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+      document.querySelector("#aside").innerHTML = datetime;
+    }
+    function UpdateTime(){
+      setInterval("Time()",500);
+    }
+  </script>
+
+</head>
+
+<body onload = "UpdateTime()">
+
+  <button id="settings-toggle">♪</button>
+
+  <div id="settings-panel">
+    <label>
+      <input type = "checkbox" id = "autoplay-checkbox"> Stop Playing Musiu
+      <div id="aside">
+        Aside Content
+      </div>
+    </label>
+  </div>
+
+  <audio class = "hidden-audio" id = "audio-player" autoplay>
+    <source src = "media/BGM.mp3" type = "audio/mp3"></source>
+  </audio>
+
+  <script>
+    function toggleSound() //用于切换音频的播放状态
+    {
+      var music = document.getElementById("audio-player"); //获取BGM的音乐ID  
+          console.log(music);
+          console.log(music.paused);
+      if (music.paused)  //判断是否播放  
+      {
+          music.paused = false;
+          music.play(); //没有就播放 
+      }  
+    }
+    setInterval("toggleSound()",1); //1ms刷新一次
+
+    document.getElementById("settings-toggle").addEventListener("click", function() {
+      var panel = document.getElementById("settings-panel");
+      if (panel.style.display === "none") 
+      {
+        panel.style.display = "block";
+      } else 
+      {
+        panel.style.display = "none";
+      }
+    });
+
+    document.getElementById("autoplay-checkbox").addEventListener("change", function() {
+      var audioPlayer = document.getElementById("audio-player");
+      if (this.checked) 
+      {
+        audioPlayer.autoplay = false;
+        audioPlayer.muted = true;
+      } 
+      else 
+      {
+        audioPlayer.autoplay = true;
+        audioPlayer.muted = false;
+      }
+    });
+  </script>
+    
+  <div id="header">
+      <div class="menu">
+        <div class="button"><a href="#home">Home</a></div>
+        <div class="button"><a href="#Rule">Rule</a></div>
+        <div class="button"><a href="#Download">Download</a></div>
+        <div class="button"><a href="#character">Character Introduction</a></div>
+      </div>
+  </div>
+
+  <div id="header">
+    <img src="" style = "width: 450px">
+  </div>
+  
+  <div id="main">
+    <section class="character" id="character">
+      <link rel="stylesheet" href="./layout.css">
+      <h1 class="heading"> 角色介紹</h1>
+      <div class="box-container">
+
+          <!-- 第一個女神 -->
+          <div class="box">
+            <img class="image" src="img/goddess1.png" style="width: auto">
+            <div class="content_1">
+              <h3 class="title">星夜女神--阿絲忒瑞婭</h3>
+              <p class="text_content">
+                擁有著一頭絢麗藍髪的女神。雖然平時罕言寡語、賽雪欺霜，但少數的發言卻往往具有強大的說服力--加上華貴的服飾和端莊的舉止，無不讓她渾身散發著尊為神祇的威嚴。
+                阿絲忒瑞婭司掌流星、星辰；也是當今女神王座的合法繼承人。
+              </p>
+            </div>
+          </div> 
+
+          <!-- 第二個女神 -->
+          <div class="box">
+            <img class="image" src="img/goddess2.png" style="width: auto">
+            <div class="content_2">
+              <h3 class="title">銀月女神--阿緹蜜絲</h3>
+              <p class="text_content">
+                綁著一頭綠色馬尾，神采飛揚、氣宇軒昂的銀月女神。便攜弓箭，身戴披風的阿緹蜜絲讓她看起來英姿颯爽、驚才風逸；一袭獵戶套裝更是點綴了她尊為女神的非凡魅力。
+                阿緹蜜絲司掌月亮、狩獵；是象徵著純潔的女神。基於阿緹蜜絲是處女神，欠缺與男性相處的經驗，她對性相關的知識比較貧乏。
+              </p>
+            </div>
+          </div> 
+
+          <!-- 第三個女神 -->
+          <div class="box">
+            <img class="image" src="img/goddess3.png" style="width: auto">
+            <div class="content_3">
+              <h3 class="title">愛慾女神--阿芙蘿黛蒂</h3>
+              <p class="text_content">
+                五女神中最美艷的存在。性格無拘無束、自由奔放，穿著性感的阿芙蘿黛蒂以自身的美貌與身材為傲，盡情展露她尊為女神的風采與韵味。
+                阿芙蘿黛蒂司掌愛情、性慾；與處女神阿緹蜜斯相反，擁有頗為豐富的性知識，有關男性的一切阿芙蘿黛蒂都很感興趣(尤其是在玩弄男人的方面)--前提對象得是她看得上眼的男人。
+              </p>
+            </div>
+          </div> 
+
+          <!-- 第四個女神 -->
+          <div class="box">
+            <img class="image" src="img/goddess4.png" style="width: auto">
+            <div class="content_4">
+              <h3 class="title">勝利女神--雅典娜</h3>
+              <p class="text_content">
+                結合了智慧與勇氣的女武神。磊落不羈的個性和英姿煥發的形象都讓手持長矛、身披戰甲的雅典娜嶄露出不凡的氣勢，是能在戰場上讓敵人聞風喪膽，所向披靡的勝利女神。
+                雅典娜司掌勇氣、戰爭；眾神祇中最受凡人(尤其女性)所崇拜的女神。
+              </p>
+            </div>
+          </div>
+
+          <!-- 第五個女神 -->
+          <div class="box">
+            <img class="image" src="img/goddess5.png" style="width: auto">
+            <div class="content_5">
+              <h3 class="title">正義女神--忒彌斯</h3>
+              <p class="text_content">
+                守護正義的女神。忒彌斯背負天秤，手持雌雄雙劍，右手白劍為雌劍，左手黑劍為雄劍；而用眼罩矇上單邊眼睛，則象徵著她的公正和無私。
+                忒彌斯司掌秩序、法律；她對當今女尊男卑的人間風俗抱有質疑，可這卻是社會發展的主流趨勢，這讓她在理念和現實之間左右為難，甚至讓她堅守的正義產生動搖。不僅如此，忒彌斯左手雄劍也因無法與右手雌劍的力量達成協調而黯然失色，導致忒彌斯無法發揮出以往的戰力。
+              </p>
+            </div>
+          </div>
+
+          <!-- 第六個女神
+          <div class="box">
+            <img class="image" src="img/goddess6.png" style="width: auto">
+            <div class="content">
+
+              <h3>琥珀</h3>
+              <p>
+                女神阿緹蜜斯的忠實信徒。一襲藍白相間的長袍與清純可人的面容，無不襯托出琥珀那集端莊、淑雅、虔誠於一身的氣質。
+                雖然久而久之的節制生活難免會讓她感到枯燥乏味，但為了維持神職者的矜持與責任，琥珀只好按奈住她對自由年華的嚮往、對誘惑之物的追求、以及對發泄性慾的渴望。
+              </p>
+            </div>
+          </div>
+
+          第七個女神
+          <div class="box">
+            <img class="image" src="img/goddess7.png" style="width: auto">
+            <div class="content">
+
+              <h3>筱夜</h3>
+              <p>
+                你的妹妹，性格溫柔體貼，十分擅長照顧別人。
+                暗戀著身為哥哥的你，卻因為血緣關係而不便抒發自己的情感，為此感到很苦惱。
+                然而當她察覺自己的哥哥是個受虐狂後，她的心中似乎覺醒了某种奇特的性癖，並以病態的方式向你傾述著愛慕之情。。。
+              </p>
+            </div>
+          </div>
+          -->
+
+        </div> 
+      </div>
+  </section>
+  </div>
+    
+  <div id="footer">
+    <hr>
+    <table class="Author_name" width="100%">
+      <tr>
+        <td>
+          Author by:
+          <li> 
+            IBUKI SORA
+          </li>
+        </td> 
+      </tr>
+      <tr>
+        <td><img src="img/IBUKI_SORA.png" width="80px"></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

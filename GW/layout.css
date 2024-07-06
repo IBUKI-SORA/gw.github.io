@@ -1,0 +1,314 @@
+@media screen and (min-device-width: 1000px)
+{  
+  body
+  {
+    margin: 5px;
+    font-family: customFont;
+    background-color: black;
+  }
+
+  *{
+    margin: 10;
+    padding: 10;
+    box-sizing: border-box;
+    text-decoration: 0.9s;
+    transition: 0.4s all linear;
+    font-size: 22px;
+  }
+  
+  autoplay-checkbox
+  {}
+  
+  .heading
+  {
+    position: relative;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: transparent;
+    animation: rain 6s linear infinite;
+    background-image: linear-gradient(to right, red, orange, yellow, lightgreen, skyblue, lightgreen, yellow, red);
+    background-size: 1000px;
+    -webkit-background-clip: text;
+  }
+
+  #aside
+  {
+    margin-left: 40px;
+  }
+
+  #header, #nav, #footer 
+  {
+    background: radial-gradient(rgb(67, 48, 154),rgba(15, 67, 67, 0.65));
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 20px;
+  }
+
+  div.menu
+  {
+    display: flex; /* 讓盒子從橫排變成豎立 */
+    margin-left: 28%;
+    gap: 50px;
+  }
+
+  .character .box-container
+  {
+    display: flex; /* 讓盒子從橫排變成豎立 */
+    flex-wrap: wrap; /* flex 元素無法在單行中容納時，會自動換行到下一行。*/
+    overflow: hidden; /* 設定容器的溢出處理 (讓字體下去的時候消失)*/
+    width: 100%; /* 設置方塊的寬度(不是女神本體) */
+    height: 1000px; /* 設置方塊的高度(不是女神本體) */
+    gap: 10px;
+  }
+
+  .character .box-container .box
+  {
+    flex: 1 1 30px; /* 設置 flex 元素的彈性能力及其初始尺寸 */
+    position: relative;
+    overflow: hidden; /* 設定容器的溢出處理 (讓圖片超出格子範圍的消失) */
+    box-shadow: 0 10px 10px rgb(111, 168, 234);
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .character .box-container .box .image
+  {
+    height: 100%; /* 讓圖片不會auto佔據屏幕 */
+    width: 100%; /* 讓圖片不會auto佔據屏幕 */
+    object-fit: cover;
+    position: absolute;
+    top: 0%;
+    left: -100%;
+    pointer-events: none; /* 禁用鼠標事件 */
+  }
+
+  .character .box-container .box .content_1
+  {
+    text-align: center;
+    padding: 10px;
+    height: 100%; /* 設置盒子背景佔據最大屏幕 */
+    background-color: rgb(59, 30, 246);
+  }
+
+  .character .box-container .box .content_2
+  {
+    text-align: center;
+    padding: 10px;
+    height: 100%; /* 設置盒子背景佔據最大屏幕 */
+    background-color: rgb(38, 214, 82);
+  }
+
+  .character .box-container .box .content_3
+  {
+    text-align: center;
+    padding: 10px;
+    height: 100%; /* 設置盒子背景佔據最大屏幕 */
+    background-color: rgb(238, 249, 170);
+  }
+
+  .character .box-container .box .content_4
+  {
+    text-align: center;
+    padding: 10px;
+    height: 100%; /* 設置盒子背景佔據最大屏幕 */
+    background-color: rgb(122, 251, 201);
+  }
+
+  .character .box-container .box .content_5
+  {
+    text-align: center;
+    padding: 10px;
+    height: 100%; /* 設置盒子背景佔據最大屏幕 */
+    background-color: rgb(167, 167, 167);
+  }
+
+  .character .box-container .box:hover .content_1
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_2
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_3
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_4
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_5
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  @keyframes rainbow
+  {
+    0%
+    {
+      background-position: 0;
+    }
+
+    25%
+    {
+      background-position: 500px;
+    }
+
+    75%
+    {
+      background-position: 1500px;
+    }
+
+    100%
+    {
+        background-position: 2000px;
+    }
+  }
+
+  .character .box-container .box .title
+  {
+    position: relative;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+    background-image: linear-gradient(to right, rgb(30, 32, 31), rgb(235, 245, 241));
+    background-size: 1000px;
+    -webkit-background-clip: text;
+  }
+
+  .character .box-container .box .text_content
+  {
+    font-size: 23px;
+    text-shadow: 1px 1px 2px #656464; /* 添加像素化的陰影效果 */
+    letter-spacing: 2px; /* 調整字母之間的間距 */
+  }
+
+  .character .box-container .box:hover .image
+  {
+    position: absolute; /* 設定圖片為絕對位置 */
+    width: auto; /* 自動調整圖片的寬度 */
+    height: auto; /* 自動調整圖片的高度 */
+    max-width: 60%; /* 設定圖片的最大寬度為容器寬度的60% */
+    max-height: 100%; /* 設定圖片的最大高度為容器高度 */
+    top: 10%; /* 將圖片置上 */
+    left: 50%; /* 將圖片水平置中 */
+    transform: translate(-50%, -40%); /* 調整圖片位置到正確的中心點 */
+    pointer-events: none; /* 禁用鼠標事件 */
+  }
+
+  div.button
+  {
+    padding: 20px;
+    background-color: rgb(61, 1, 50);
+    -webkit-box-shadow: 10px 5px 10px rgb(89, 9, 74);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  div.button a /* a有效內置元素标签  */
+  {
+    text-decoration: none;
+    color: #f11f1f;
+  }
+
+  div.button:hover 
+  {
+    -webkit-box-shadow: 0px 0px 10px pink;
+    transform: scale(1.1) rotate(360deg);
+    background-color: rgba(185, 22, 171, 0.824);
+  }
+
+  .Author_name
+  {
+    color:aliceblue;
+  }
+  #header 
+  {
+    order: 1px;
+    width: 100%;
+  }
+
+  #nav 
+  {
+    order: 2px;
+    width: 200px;
+    color: rgb(118, 208, 208);
+  }
+
+  #main 
+  {
+    border: 1px solid black;
+    border-radius: 20px;
+    order: 3px;
+    height: 500px;
+    flex-grow: 1;
+    overflow: scroll;
+    color: rgb(66, 66, 66);
+    background: radial-gradient(rgb(249, 230, 230),rgb(87, 89, 107));
+  }
+
+  #footer 
+  {
+    order: 5px;
+    width: 100%;
+  }
+
+  #header img 
+  {
+    float: left;
+    margin-right: 10px;
+  }
+
+  #footer img
+  {
+    opacity: 0.88; /* 將圖片變透明 */
+  }
+
+  .hidden-audio  
+  {
+    color:aliceblue;
+    display: none;
+  }
+
+  #settings-panel 
+  {
+    color:aliceblue;
+    display: none;
+  }
+
+  @font-face
+  {
+    font-family: customFont;
+    src: url(media/WenQuanYi_Bitmap_Song.ttf);
+  }
+}
+
+@media only screen and (max-width: 800px) 
+{
+  #nav
+  {
+    order: 4px;
+    width: 100%;
+  }
+
+  #aside
+  {
+    order: 2px;
+    width: 100%;
+  }
+
+  #main
+  {
+    background: radial-gradient(rgb(255, 255, 255),rgb(2, 18, 23));
+  }
+}
